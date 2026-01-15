@@ -11,18 +11,8 @@ import pandas as pd  # Para manipular datos. Instalar con: pip install pandas
 dfHolidays = pd.read_csv("https://raw.githubusercontent.com/gcastano/Streamlit-Demo-Apps/refs/heads/main/StreamlitCalculadoraFreelance/WorldHolidays.csv", sep=";")
 
 
-# 1. Configuración de la página (DEBE SER LA PRIMERA LÍNEA DE STREAMLIT)
-st.set_page_config(
-    page_title="Freelance Pro | Calculadora de Tarifas",
-    page_icon="💰", # Puedes usar un emoji o una URL a una imagen
-    layout="wide",   # "centered" o "wide"
-    initial_sidebar_state="expanded", # "auto", "expanded", "collapsed"
-    menu_items={
-        'Get Help': 'https://www.misitio.com/soporte',
-        'Report a bug': "https://www.misitio.com/bug",
-        'About': "# Calculadora Freelance\nHerramienta para calcular tu valor por hora con precisión."
-    }
-)
+# Configurar la página de Streamlit
+st.set_page_config(page_title="Calculadora Freelance", layout="wide")
 
 # Añadir CSS personalizado
 st.html(
@@ -141,3 +131,4 @@ with st.container(border=True,key="ecuacion"):
 
         """
         st.latex(parEcuacion)  # Mostrar la ecuación en formato LaTeX con los valores ingresados
+
